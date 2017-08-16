@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Personal Info
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid">
+    <form action="{{ url_for('editpersonalinfo') }}" method="POST">
+        <div class="form-group">
+            <input class="form-control" autocomplete="off" name="education" id="education" placeholder="School name" type="text"/>
+            <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" autocomplete="off" name="primary_instrument" id="primary_instrument" placeholder="Primary Instrument" type="text"/>
+            <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" autocomplete="off" name="secondary_instrument" id="secondary_instrument" placeholder="Secondary Instrument" type="text"/>
+            <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default" type="submit">Update</button>
+            <button class="btn btn-default" type="cancel" onclick="window.location='{{url_for("index")}}';return false;">Cancel</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

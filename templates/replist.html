@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Rep List
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid">
+    <h2>Repertoire List</h2>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Piece</th>
+                <th>Composer</th>
+                <th>Instrument</th>
+                <th>Date Played</th>
+                <th>Solo/Ensemble</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <form action="{{ url_for('replist') }}" data-toggle="validator" id="replist" method="POST">
+                <th>
+                    <div class="form-group">
+                        <input class="form-control" size="12" autocomplete="off" name="piece" id="piece" required type="text"/>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <input class="form-control" size="12" autocomplete="off" name="composer" id="composer" type="text"/>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <input class="form-control" size="12" autocomplete="off" name="instrument" id="instrument" type="text"/>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <input class="form-control" autocomplete="off" name="date_played" id="date_played" type="date"/>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <input class="form-control" size="12" autocomplete="off" name="ensemble" id="ensemble" type="text"/>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <input class="form-control" size="12" autocomplete="off" name="notes" id="notes" type="text"/>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <button class="btn btn-default" type="submit">Add</button>
+                    </div>
+                </th>
+                </form>
+            </tr>
+            {% for rep in rep_list %}
+                <tr>
+                    <td>{{rep.piece}}</td>
+                    <td>{{rep.composer}}</td>
+                    <td>{{rep.instrument}}</td>
+                    <td>{{rep.date_played}}</td>
+                    <td>{{rep.ensemble}}</td>
+                    <td>{{rep.notes}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

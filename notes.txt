@@ -1,0 +1,104 @@
+August 12
+    created login.html and started updating layout.html
+    added funny image to apology.html
+    
+    next step: implement register
+    
+August 13
+    added background image
+    switched to container-fluid
+    
+    updated register.html
+    implemented register
+    
+    implemented navigation bar
+    ****** need to go back through and change URL routes!
+    
+    Implementing Biography:
+        created biography table in tables.db
+        set up biography route in application.py
+        created editBio.html
+        implemented "GET" request method
+        
+        finished implementing bio
+        formatted bio using line spacing
+        
+        -- not the best user experience (have to retype the entire bio every time you edit it) --
+        -- try to enable the existing bio to already appear within the text box
+        
+        added cancel button to edit page
+    
+    Implementing Rep List:
+        created table for replist
+        table - issue with formatting (goes off the side of screen (need to make the form inputs smaller)
+        need to implement the replist route in application.py
+        
+        finished implementing rep list
+        
+        -- not the best user experience (unable to edit or delete elements once you make them -> MUST ADD)
+        -- Search/sort capabilities (sort on different fields from the user's point of view)
+    
+    
+    -- NEXT STEPS --
+    -> implement Events (Google Calendar API?)
+    -> implement Home with some sort of quick access to add rep or events
+        -> display a calendar
+            -> https://stackoverflow.com/a/38201158
+        -> display a small vertical form to add rep
+        -> display personal information
+            -> profile picture, name, education, primary instrument, secondary instrument, etc.
+            -> possibly a new route in between register and index
+    
+August 14
+    Implement Events:
+        read Google Calendar API Documentation
+        
+        -> EVENTS CALENDAR TOO COMPLICATED FOR NOW
+    
+    Implement Homepage:
+        read about file uploads (for profile picture)
+        need to create a new route in between register and homepage
+        
+        read Flask-Uploads -> http://pythonhosted.org/Flask-Uploads/
+        
+        created personalinfo route in application.py -> NOT IMPLEMENTED
+        created personalInfo.html -> NOT UPDATED
+
+August 15
+    Implementing Homepage:
+        configured Flask-Uploads in top of code but did NOT make the route
+        
+        updated personal info template
+        added uploads route to application.py
+        NEED TO CREATE PERSONAL INFO TABLE (see CS50 Final Project Table)
+        
+        implemented uploads and personal info without inserting into database -> need to handle FIRST-TIME USERS and EDITING
+        
+        -- WHEN CREATING INDEX - maybe have a placeholder image in case profile picture is left blank
+        
+        got upload working - figure out how to customize the filename to make sorting easier
+        
+        
+        -- NOTES ON UPLOAD --
+        user can now upload files and they will be renamed to user# where # is the user_id
+        currently, no feature to edit the pictures - make different template for editing (largely the same, but the actions are different)
+        
+        -- NEXT STEPS --
+        implement personal info table
+        finish implementing personal info
+        create homepage for user
+        create edit page for upload
+        
+        for whole site: https://stackoverflow.com/questions/7865695/how-do-i-create-the-small-icon-next-to-the-website-tab-for-my-site
+        
+        created index.html/updated with values
+        need to finish updating personal info database and then finish implementing index route
+        
+        finished implementing index route
+        
+        -- LAST STEPS -- 
+        better user experience for editing bio and replist
+        overwrite files to not take up a ton of space - DONE
+        updated UX for bio
+        
+        need to add delete feature to replist

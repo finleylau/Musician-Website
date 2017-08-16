@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Biography
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <h2>Biography</h2>
+        <hr>
+        <p style="text-align:left">
+            {% for line in biography.splitlines() %}
+                {{line}}<br>
+            {% endfor %}
+        </p>
+        <p>
+            <a href="{{url_for("createbiography")}}">Edit</a>
+        </p>
+    </div>
+{% endblock %}
