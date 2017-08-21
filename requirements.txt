@@ -3,3 +3,4 @@ Flask-Session
 passlib
 SQLAlchemy
 Flask-Uploads
+cs50
